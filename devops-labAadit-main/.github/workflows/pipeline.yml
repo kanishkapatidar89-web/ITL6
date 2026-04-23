@@ -1,0 +1,17 @@
+name: My First CI CD
+on: [push] # This triggers the pipeline every time you push code
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest # This starts a free Linux server for you!
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Run a Build Step
+        run: echo "Building the project..."
+
+      - name: Run a Test Step
+        run: |
+          echo "Checking if index.html exists..."
+          ls index.html
